@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./css/a.css";
-import "./css/b.css";
-import "./css/c.css";
+import "./d.css";
+import "./b.css";
+import "./c.css";
 import Data from './data';
 
 // import "bootstrap/dist/css/bootstrap.min.css";
@@ -38,13 +38,18 @@ const Calendar = () => {
       console.log(weekday);
       console.log("DATA ", birthDate);
 
-      let nameString = data.name;
-      nameString = nameString.split(" ");
-      nameString =  nameString[0].substring(0, 1).toUpperCase();
-      if (nameString.length > 1) {
-      nameString += nameString[nameString.length - 1].substring(0, 1).toUpperCase();
-      }
-      console.log(nameString);
+      // let nameString = data.name;
+      let nameString = data.name.split(' ').reduce((acc, subname) =>
+
+      acc + subname[0], '')
+
+    console.log(nameString);
+      // nameString = nameString.split(" ");
+      // nameString =  nameString[0].substring(0, 1).toUpperCase();
+      // if (nameString.length > 1) {
+      // nameString += nameString[nameString.length - 1].substring(0, 1).toUpperCase();
+      // }
+      // console.log(nameString);
       if (weekday === "MON") {
         monday.push({
           name: nameString,
@@ -109,92 +114,79 @@ const Calendar = () => {
         <div className="app__content">
           <div id="work-area">
             <div className="calendar-container">
-              <div className="row seven-cols">
-                <div className="col-md-1">
                   <p className="day">MON</p>
                   <div className='row'>
                     {mon.map((data, key) => {
                       return (
                         <div key={key} className={"column key" + key}>
-                          <p className="dname">{data.name}</p>
+                          <p className="name">{data.name}</p>
                         </div>
                       );
                     })}
-                  </div>
                 </div>
-                <div className="col-md-1">
                   <p className="day">TUE</p>
                   <div className='row'>
                     {tue.map((data, key) => {
                       return (
                         <div key={key} className={"column key" + key}>
-                          <div className="dname">{data.name}</div>
+                          <div className="name">{data.name}</div>
                         </div>
                       );
                     })}
                   </div>
-                </div>
-                <div className="col-md-1">
                   <p className="day">WED</p>
                   <div className="row">
                     {wed.map((data, key) => {
                       return (
                         <div key={key} className={"column key" + key}>
-                          <div className="dname">{data.name}</div>
+                          <div className="name">{data.name}</div>
                         </div>
                       );
                     })}
                   </div>
-                </div>
-                <div className="col-md-1">
                   <p className="day">THU</p>
                   <div className="row">
                     {thu.map((data, key) => {
                       return (
                         <div key={key} className={"column key" + key}>
-                          <div className="dname">{data.name}</div>
+                          <div className="name">{data.name}</div>
                         </div>
                       );
                     })}
                   </div>
-                </div>
-                <div className="col-md-1">
+
                   <p className="day">FRI</p>
                   <div className="row">
                     {fri.map((data, key) => {
                       return (
                         <div key={key} className={"column key" + key}>
-                          <div className="dname">{data.name}</div>
+                          <div className="name">{data.name}</div>
                         </div>
                       );
                     })}
                   </div>
-                </div>
-                <div className="col-md-1">
+
                   <p className="day">SAT</p>
                   <div className="row">
                     {sat.map((data, key) => {
                       return (
                         <div key={key} className={"column key" + key}>
-                          <div className="dname">{data.name}</div>
+                          <div className="name">{data.name}</div>
                         </div>
                       );
                     })}
                   </div>
-                </div>
-                <div className="col-md-1">
+
                   <p className="day">SUN</p>
                   <div className="row">
                     {sun.map((data, key) => {
                       return (
                         <div key={key} className={"column key" + key}>
-                          <div className="dname">{data.name}</div>
+                          <div className="name">{data.name}</div>
                         </div>
                       );
                     })}
                   </div>
-                </div>
-              </div>
             </div>
 
             <div className="app__inputs">

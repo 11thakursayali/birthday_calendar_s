@@ -183,6 +183,7 @@
           Temporary Styles
           Please replace these when you start working on the task
        */
+       display: flex;
        background: #fff;
        border: 2px dashed rgba(0, 0, 0, .2);
        border-radius: 3px;
